@@ -909,7 +909,7 @@ def bare_extraction(filecontent, url=None, no_fallback=False,  # fast=False,
                 raise ValueError
 
         # extract metadata if necessary
-        if output_format != 'txt':
+        if output_format not in ['txt', 'xml']:
             document = extract_metadata(tree, url, date_extraction_params, no_fallback, author_blacklist)
             # cut short if extracted URL in blacklist
             if document.url in url_blacklist:
